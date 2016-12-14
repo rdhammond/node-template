@@ -1,0 +1,28 @@
+{
+  "name": "node-template",
+  "description": "Pre-made template for Node.js projects",
+  "main": "app.coffee",
+  "authors": [
+    "R. Daniel Hammond"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "template",
+    "express",
+    "bower"
+  ],
+  "homepage": "https://github.com/rdhammond/node-template.git",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.1.1",
+    "foundation": "^5.5.3",
+    "foundation-icons": "*",
+    "html5shiv": "^3.7.3"
+  }
+}
