@@ -1,6 +1,22 @@
-doctype html
-html
-    head
-        title Test Page
-    body
-        h1 Works!
+extends layout.pug
+
+block title
+    title Node Template
+
+block stylesheets
+    - var indexCss = compileDebug ? 'index.css' : 'index.min.css'
+    link(rel="stylesheet", href='css/' + indexCss)
+
+block body
+    .row
+        .small-12.medium-6.medium-offset-3.columns
+            .media-object.stack-for-small
+                .media-object-section
+                    .thumbnail
+                        img(src="img/test.png")
+                .media-object-section
+                        h1
+
+block scripts
+    - var indexJs = compileDebug ? 'index.js' : 'index.min.js'
+    script(src='js/' + indexJs)

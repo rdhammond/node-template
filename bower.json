@@ -21,8 +21,9 @@
   ],
   "devDependencies": {
     "jquery": "^3.1.1",
-    "foundation": "^5.5.3",
     "foundation-icons": "*",
-    "html5shiv": "^3.7.3"
+    "html5shiv": "^3.7.3",
+    "what-input": "^4.0.4",
+    "foundation-sites": "^6.3.0"
   }
 }
