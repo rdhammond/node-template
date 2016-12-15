@@ -48,7 +48,7 @@ grunt.initConfig
             ]
 
     uglify:
-        to_prod:
+        prod:
             files: [{
                 expand: true
                 cwd: 'public/js/'
@@ -59,7 +59,7 @@ grunt.initConfig
             }]
 
     cssmin:
-        to_prod:
+        prod:
             files: [{
                 expand: yes
                 cwd: 'public/css/'
@@ -69,14 +69,25 @@ grunt.initConfig
                 flatten: yes
             }]
 
+    imagemin:
+        prod:
+            files: [{
+                expand: yes
+                cwd: 'client/img/'
+                src: ['**/*.{jpg,gif,png}']
+                dest: 'public/img/'
+                flatten: yes
+            }]
+
 grunt.loadNpmTasks 'grunt-contrib-clean'
 grunt.loadNpmTasks 'grunt-sass'
 grunt.loadNpmTasks 'grunt-contrib-copy'
 grunt.loadNpmTasks 'grunt-contrib-uglify'
 grunt.loadNpmTasks 'grunt-contrib-cssmin'
+grunt.loadNpmTasks 'grunt-contrib-imagemin'
 
 grunt.registerTask 'default', () ->
     grunt.task.run 'clean'
     grunt.task.run 'sass:compile'
     grunt.task.run 'copy:to_prod'
-    grunt.task.run 'uglify:to_prod', 'cssmin:to_prod'
+    grunt.task.run 'uglify:prod', 'cssmin:prod', 'imagemin:prod'
