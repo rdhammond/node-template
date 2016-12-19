@@ -1,6 +1,5 @@
 class RootRouter
-    constructor: (ioc) ->
-        ioc.RootRouter ?= RootRouter
+    constructor: () ->
     
     indexGet: (req, res) ->
         res.render 'index.pug'

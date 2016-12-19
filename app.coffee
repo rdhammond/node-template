@@ -1,25 +1,14 @@
-config = require './config'
-Server = require './lib/Server'
+
 RootRouter = require './lib/RootRouter'
+rootRouter = new RootRouter
 
-
-# IOC init
-#
-ioc =
-    express: require 'express'
-
-
-# Router init
-#
-rootRouter = new RootRouter ioc
-
-
-# Server init
-#
-server = new Server ioc
+express = require 'express'
+Server = require './lib/Server'
+server = new Server express
 server.addRouter rootRouter
 
 # Start app
 #
+config = require './config'
 server.run config, (server) ->
     console.log "Listening on port #{server.port}"
